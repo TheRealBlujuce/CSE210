@@ -1,0 +1,9 @@
+Made by Will Marda
+
+Hi-Lo is a game where the player guesses if a randomly generated number is higher or lower than the previously generated number.
+In this game, the player plays against an AI that also tries to guess the number correctly. If the player gains more points than the AI,
+the player wins.
+
+Project Structure - ?
+
+Required Software: Windows Console

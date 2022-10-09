@@ -47,9 +47,11 @@ namespace Unit02
                 NewDealer.DealCard();
                 curDealerCardNumber = NewDealer.GetCardNumber();
 
-                while (curDealerCardNumber == ogDealerCardNumber)
+                if (curDealerCardNumber == ogDealerCardNumber)
                 {
-                    curDealerCardNumber = NewDealer.GetCardNumber();
+                    if (curDealerCardNumber > ogDealerCardNumber){ curDealerCardNumber = curDealerCardNumber - 1;}
+                    else
+                    if (curDealerCardNumber < ogDealerCardNumber){ curDealerCardNumber = curDealerCardNumber + 1;}
                 }
 
                 Console.WriteLine("");
@@ -101,32 +103,45 @@ namespace Unit02
                 curPlayerPoints = playerPoints;
                 curEnemyPoints = enemyPoints;
 
+                Console.WriteLine("");
                 Console.Write("Player has " + curPlayerPoints + " points.");
                 Console.WriteLine("");
-                Console.Write("Player has " + curEnemyPoints + " points.");
+                Console.Write("AI has " + curEnemyPoints + " points.");
 
                 Console.WriteLine("");
 
                 // check to see if someone wins
-                if(curPlayerPoints >= 1000) {curPlayerPoints = 1000; Console.Write("Player Wins!");}
+                if(curPlayerPoints >= 500) {curPlayerPoints = 500; Console.Write("Player Wins!");}
                 else
                 if(curPlayerPoints <= 0) {curPlayerPoints = 0; Console.Write("Player Loses!");}
 
-                if(curEnemyPoints >= 1000) {curEnemyPoints = 1000; Console.Write("AI Wins!");}
+                if(curEnemyPoints >= 500) {curEnemyPoints = 500; Console.Write("AI Wins!");}
                 else
                 if(curEnemyPoints <= 0) {curEnemyPoints = 0; Console.Write("AI Loses!");}
 
                 Console.Write("Would you like to keep playing? 'y'/'n': ");
+                Console.WriteLine("");
 
                 isValidAnswer = false;
                 while(!isValidAnswer){
                     playerInput = Console.ReadLine();
 
-                    if (playerInput == "y"){ isValidAnswer = true; isPlaying = true; playerAnswer = ""; playerPoints = curPlayerPoints; enemyPoints = curEnemyPoints;}
+                    if ( (playerPoints > 0 && enemyPoints > 0) && (playerPoints < 500 && enemyPoints < 500)) {
+                        if (playerInput == "y"){ isValidAnswer = true; isPlaying = true; playerAnswer = ""; playerPoints = curPlayerPoints; enemyPoints = curEnemyPoints;}
+                        else
+                        if (playerInput == "n"){ isValidAnswer = true; isPlaying = false; Console.Write("Thanks for Playing!"); }
+                        else
+                        if (playerInput != "y" && playerInput != "n"){ isValidAnswer = false; Console.Write("Invalid input. Please enter either 'y' or 'n'"); }
+                    }
                     else
-                    if (playerInput == "n"){ isValidAnswer = true; isPlaying = false; Console.Write("Thanks for Playing!"); }
-                    else
-                    if (playerInput != "y" && playerInput != "n"){ isValidAnswer = false; Console.Write("Invalid input. Please enter either 'y' or 'n'"); }
+                    if ( (playerPoints <=0 || enemyPoints <= 0) || (playerPoints >= 500 || enemyPoints >= 500))
+                    {
+                        if (playerInput == "y"){ isValidAnswer = true; isPlaying = true; playerAnswer = ""; playerPoints = 300; enemyPoints = 300;}
+                        else
+                        if (playerInput == "n"){ isValidAnswer = true; isPlaying = false; Console.Write("Thanks for Playing!"); }
+                        else
+                        if (playerInput != "y" && playerInput != "n"){ isValidAnswer = false; Console.Write("Invalid input. Please enter either 'y' or 'n'"); }
+                    }
                 }
 
             }
