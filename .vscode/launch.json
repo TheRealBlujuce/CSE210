@@ -264,6 +264,55 @@
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
-        }        
+        },
+        {
+            "name": "Practice4-01",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "final-practice4-01",
+            "program": "${workspaceFolder}/final/Practice4-01/bin/Debug/net6.0/Practice4-01.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/final/Practice4-01",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+        {
+            "name": "Practice4-02",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "final-practice4-02",
+            "program": "${workspaceFolder}/final/Practice4-02/bin/Debug/net6.0/Practice4-02.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/final/Practice4-02",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+        {
+            "name": "Practice4-03",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "final-practice4-03",
+            "program": "${workspaceFolder}/final/Practice4-03/bin/Debug/net6.0/Practice4-03.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/final/Practice4-03",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+        {
+            "name": "Practice4-04",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "final-practice4-04",
+            "program": "${workspaceFolder}/final/Practice4-04/bin/Debug/net6.0/Practice4-04.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/final/Practice4-04",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        }    
+        
     ]
 }
